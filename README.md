@@ -1,16 +1,38 @@
-## Hi there 👋
+## Introduction
 
-<!--
-**mihaimmt/mihaimmt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm Mihai - aspiring Quantitative Analyst & Mathematics Student
 
-Here are some ideas to get you started:
+**Bedford School || Year 12
+(A-levels: Maths, Further Maths, Physics, Computer Science)**
+Interested in mathematical modelling, algorithmic trading, and applied statistics.
+Currently researching: Monte Carlo simulations, linear algebra for machine learning and data finance.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## Projects
+
+### Monte Carlo Simulation Project Simulated random processes and option pricing using Phython (NumPy + Matplotlib).
+Includes visualisations of dice roll convergene -> Brownian motion -> Black-Scholes framework.
+
+[View Project] 
+
+---
+
+### Algorithmic Trading Strategy
+Backtested a simple moving-average crossover strategy using historical stock data from Yahoo Finance. Visualised performance metrics and cumulative returns.
+
+etc...
+
+---
+
+## Tech & Tools
+Python | C# | NumPuy | Pandas | Matplotlib | Jupyter Notebook | Git | LaTeX 
+
+---
+
+## Courses & Achievements
+- Co-leading Student-led model rocket competition
+- National Cipher Challenge Team Captain
+- UKMT Senior Challenge (aiming for BMO qualification)
+- Cambridge STEP & TMUA preperation
+- EPQ in progress
