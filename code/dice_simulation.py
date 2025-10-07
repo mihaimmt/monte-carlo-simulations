@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
+
+os.makedirs("results", exist_ok=True)
 # reproducible random numbers
 rng = np.random.default_rng(42)
 
@@ -21,5 +24,6 @@ plt.bar(range(1, 7), freqs)
 plt.xlabel("Face")
 plt.ylabel("Frequency")
 plt.title(f"Dice frequencies (n={n})")
-plt.savefig("../results/dice_freqs.png", dpi=150)
+plt.savefig("results/dice_freqs.png", dpi=150)
+
 plt.show()
