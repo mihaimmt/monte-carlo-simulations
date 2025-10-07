@@ -11,7 +11,8 @@ Currently researching: Monte Carlo simulations, linear algebra for machine learn
 
 ## Projects
 
-### Monte Carlo Simulation Project Simulated random processes and option pricing using Phython (NumPy + Matplotlib).
+### Monte Carlo Simulation Project
+Simulated random processes and option pricing using Python (NumPy + Matplotlib).
 Includes visualisations of dice roll convergene -> Brownian motion -> Black-Scholes framework.
 
 [View Project] 
