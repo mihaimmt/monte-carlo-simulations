@@ -1,29 +1,45 @@
+# dice_simulation.py
 import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-
+# -------------------------------
+# Ensure results folder exists
+# -------------------------------
 os.makedirs("results", exist_ok=True)
-# reproducible random numbers
-rng = np.random.default_rng(42)
 
+# -------------------------------
+# Dice simulation parameters
+# -------------------------------
+rng = np.random.default_rng(42)  # reproducible
+N = 10000  # number of dice rolls
+
+# -------------------------------
+# Function to simulate dice rolls
+# -------------------------------
 def simulate_die_rolls(n):
     rolls = rng.integers(1, 7, size=n)
-    counts = np.bincount(rolls, minlength=7)[1:]  # index 1..6
+    counts = np.bincount(rolls, minlength=7)[1:]  # only 1..6
     freqs = counts / n
     return freqs, rolls
 
-# simulate 10,000 dice rolls
-n = 10000
-freqs, rolls = simulate_die_rolls(n)
+# -------------------------------
+# Run simulation
+# -------------------------------
+freqs, rolls = simulate_die_rolls(N)
+
+# Print results
 print("Empirical probabilities:", freqs)
 print("Expected probability per face:", 1/6)
 
-# plot histogram
-plt.bar(range(1, 7), freqs)
+# -------------------------------
+# Plot histogram
+# -------------------------------
+plt.bar(range(1,7), freqs)
 plt.xlabel("Face")
 plt.ylabel("Frequency")
-plt.title(f"Dice frequencies (n={n})")
-plt.savefig("results/dice_freqs.png", dpi=150)
+plt.title(f"Dice frequencies (n={N})")
 
+# Save figure in results folder
+plt.savefig("results/dice_freqs.png", dpi=150)
 plt.show()
