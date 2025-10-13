@@ -1,6 +1,6 @@
 ## Introduction
 
-I'm Mihai - aspiring Quantitative Analyst & Mathematics Student
+I'm Mihai - Mathematics Student
 
 **Bedford School || Year 12
 (A-levels: Maths, Further Maths, Physics, Computer Science)**
