@@ -1,7 +1,7 @@
-# dice_simulation.py
-import numpy as np
-import matplotlib.pyplot as plt
+# dice_simulation_simple.py
+import random
 import os
+import matplotlib.pyplot as plt
 
 # -------------------------------
 # Ensure results folder exists
@@ -9,37 +9,45 @@ import os
 os.makedirs("results", exist_ok=True)
 
 # -------------------------------
-# Dice simulation parameters
+# Parameters
 # -------------------------------
-rng = np.random.default_rng(42)  # reproducible
 N = 10000  # number of dice rolls
+faces = 6  # sides of the dice
 
 # -------------------------------
-# Function to simulate dice rolls
+# Simulate dice rolls
 # -------------------------------
-def simulate_die_rolls(n):
-    rolls = rng.integers(1, 7, size=n)
-    counts = np.bincount(rolls, minlength=7)[1:]  # only 1..6
-    freqs = counts / n
-    return freqs, rolls
+rolls = []
+for _ in range(N):
+    roll = random.randint(1, faces)  # generates integer 1-6
+    rolls.append(roll)
 
 # -------------------------------
-# Run simulation
+# Count occurrences
 # -------------------------------
-freqs, rolls = simulate_die_rolls(N)
+counts = [0] * faces  # list to store counts for faces 1-6
 
+for roll in rolls:
+    counts[roll - 1] += 1  # increment count for that face
+
+# -------------------------------
+# Calculate empirical probabilities
+# -------------------------------
+freqs = [count / N for count in counts]
+
+# -------------------------------
 # Print results
+# -------------------------------
+print("Counts per face:", counts)
 print("Empirical probabilities:", freqs)
-print("Expected probability per face:", 1/6)
+print("Expected probability per face:", 1 / faces)
 
 # -------------------------------
 # Plot histogram
 # -------------------------------
-plt.bar(range(1,7), freqs)
-plt.xlabel("Face")
-plt.ylabel("Frequency")
-plt.title(f"Dice frequencies (n={N})")
-
-# Save figure in results folder
-plt.savefig("results/dice_freqs.png", dpi=150)
-plt.show()
+plt.bar(range(1, faces + 1), freqs) # x values on histogram are 1-6, y values are frequencies
+plt.xlabel("Face") # x-axis label
+plt.ylabel("Frequency") # y-axis label
+plt.title(f"Dice frequencies (n={N})") # title of histogram
+plt.savefig("results/dice_freqs.png", dpi=150) # save figure to results folder 
+plt.show() # display histogram
